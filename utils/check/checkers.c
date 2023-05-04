@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:55:00 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/04/19 15:01:36 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:20:18 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	is_int(char *arg) // atoi , itoa - strcmp (atoi == itoa)
 {
 	int	nbr;
 
-	if (!ft_strcmp(arg, "0"))
+	if (!ft_strncmp(arg, "0", ft_strlen(arg)))
 		return (1);
-	nbr = ft_atoi(arg);
+	nbr = mod_atoi(arg);
 	if (nbr > INT_MAX || nbr < INT_MIN || nbr == 0)
 		return (0);
 	return (1);
@@ -38,16 +38,14 @@ int	is_dup(int ac, char **av, int i)
 	return (0);
 }
 
-void	check_args(int ac, char **av)
+void	check_args(int ac, char **args)
 {
 	int	i;
 
 	i = 1;
-	if (ac == 1)
-		exit(0);
 	while (i != ac)
 	{
-		if (!is_int(av[i]) || is_dup(ac, av, i))
+		if (!is_int(args[i]) || is_dup(ac, args, i))
 			error();
 		i++;
 	}

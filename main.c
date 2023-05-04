@@ -6,52 +6,76 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:43 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/04/19 15:03:58 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:46:04 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static t_count	*init_count(void)
+{
+	t_count	*new;
+
+	new = malloc(sizeof(t_count));
+	new->moves = 0;
+	return (new);
+}
+
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
-	/* t_stack	*a;
+	t_stack	*a;
 	t_stack	*b;
+	t_stack *temp1;
+	t_stack *temp2;
+	t_count	*counter;
+	
+
+	// if ac == 2 -> split and check
+	// if ac > 2 -> check
+	// if ac == 1 -> exit
 
 	a = NULL;
 	b = NULL;
+	counter = init_count();
 	
-	check_args(argc, argv); */
-	
-	t_stack	head;
-/* 	t_stack	node; */
-	t_stack *ptr;
-
-	ptr = &head;
-	
-	head.nbr = 42;
-	head.next = NULL;
-/* 	node.nbr = 21;
-	node.next = NULL; */
-	
-
-	/* printf("%d\n", head.nbr); */
-	while (ptr != NULL)
+/* 	if (argc == 2)
 	{
-		printf("%d\n", ptr->nbr);
-		ptr = ptr->next;
+		printf("HERE\n");
+		check_args(argc, ft_split(argv[1], ' '));
+		
+		a = get_stack(argc, ft_split(argv[1], ' '));
+	} */
+	if (argc > 2)
+	{
+		check_args(argc, argv);
+		a = get_stack(argc, argv);
 	}
-	
- 	swap(&head);
-
-	ptr = &head;
-	while (ptr != NULL)
+	else
+		error();
+	temp1 = a;
+	while (temp1 != NULL)
 	{
-		printf("swap: %d\n", ptr->nbr);
-		ptr = ptr->next;
-	} 
-
-	printf("ATOI: %d\n", mod_atoi("23456ar567"));
-
+		printf("%d\n", temp1->nbr);
+		temp1 = temp1->next;
+	}
+	printf("a %p\n", a);
+	printf("b %p\n", b);
+	pb(&a, &b, counter);
+	printf("a %p\n", a);
+	printf("b %p\n", b);
+	
+	pb(&a, &b, counter);
+	temp1 = a;
+	temp2 = b;
+	while (temp1 != NULL)
+	{
+		printf("STACK A: %d\n", temp1->nbr);
+		temp1 = temp1->next;
+	}
+	while (temp2 != NULL)
+	{
+		printf("STACK B: %d\n", temp2->nbr);
+		temp2 = temp2->next;
+	}
+	printf("Moves: %d\n", counter->moves);
 }

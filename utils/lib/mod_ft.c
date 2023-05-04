@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:05:41 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/04/19 14:57:47 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:25:35 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	mod_atoi(const char *str)
 		sign = -sign;
 		i++;
 	}
-	while (str[i] && ft_isdigit(str[i]))
+	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			error();
@@ -40,15 +40,15 @@ int	mod_atoi(const char *str)
 	return (res * sign);
 }
 
-void	lst_add(t_stack *lst, t_stack *new)
+void	lst_add(t_stack **lst, t_stack *new)
 {
 	t_stack	*last;
 
-	if (lst == NULL)
-		lst = new;
+	if (*lst == NULL)
+		*lst = new;
 	else
 	{
-		last = lst_last(lst);
+		last = lst_last(*lst);
 		last -> next = new;
 	}
 }
