@@ -16,9 +16,12 @@ SRCS        :=            utils/move/rotate.c \
                           utils/move/rev_rotate.c \
                           utils/move/swap.c \
                           utils/get/getters.c \
-                          utils/lib/mod_ft.c \
+                          utils/lib/ft_utils.c \
+                          utils/lib/free.c \
+						  utils/lib/lst_utils.c \
                           utils/check/checkers.c \
                           utils/error/error.c \
+						  utils/sort/sort.c \
                           main.c \
                           
 OBJS        := $(SRCS:.c=.o)

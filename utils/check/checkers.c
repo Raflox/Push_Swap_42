@@ -6,13 +6,27 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:55:00 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/02 17:20:18 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/05 12:48:48 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	is_int(char *arg) // atoi , itoa - strcmp (atoi == itoa)
+int	is_sorted(t_stack **stack)
+{
+	t_stack	*temp;
+
+	temp = *stack;
+	while (temp->next != NULL)
+	{
+		if (temp->nbr > temp->next->nbr)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
+/* int	is_int(char *arg) // atoi , itoa - strcmp (atoi == itoa)
 {
 	int	nbr;
 
@@ -22,31 +36,37 @@ int	is_int(char *arg) // atoi , itoa - strcmp (atoi == itoa)
 	if (nbr > INT_MAX || nbr < INT_MIN || nbr == 0)
 		return (0);
 	return (1);
-}
+} */
 
-int	is_dup(int ac, char **av, int i)
+int	checkdup(t_stack **a)
 {
-	int	j;
+	t_stack	*temp;
+	t_stack	*temp2;
 
-	j = 0;
-	while (j != i && j != ac)
+	temp = *a;
+	while (temp != NULL)
 	{
-		if (av[j] == av[i])
-			return (1);
-		j++;
+		temp2 = temp->next;
+		while (temp2 != NULL)
+		{
+			if (temp->nbr == temp2->nbr)
+				return (1);
+			temp2 = temp2->next;
+		}
+		temp = temp->next;
 	}
 	return (0);
 }
 
-void	check_args(int ac, char **args)
+/* void	check_args(int ac, char **args)
 {
 	int	i;
 
 	i = 1;
 	while (i != ac)
 	{
-		if (!is_int(args[i]) || is_dup(ac, args, i))
+		if (!is_int(args[i]))
 			error();
 		i++;
 	}
-}
+} */
