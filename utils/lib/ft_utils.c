@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:05:41 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/10 11:27:51 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 18:19:37 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	mod_atoi(const char *str)
 {
-	int	i;
-	int	res;
-	int	sign;
+	int			i;
+	long long	res;
+	int			sign;
 
 	i = 0;
 	res = 0;
@@ -25,11 +25,8 @@ int	mod_atoi(const char *str)
 		i++;
 	if (str[i] == '+' && ft_isdigit(str[i + 1]))
 		i++;
-	if (str[i] == '-')
-	{
+	if (str[i] == '-' && ++i)
 		sign = -sign;
-		i++;
-	}
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
@@ -37,6 +34,8 @@ int	mod_atoi(const char *str)
 		res = res * 10 + str[i] - 48;
 		i++;
 	}
+	if ((res * sign) > INT_MAX || (res * sign) < INT_MIN)
+		error();
 	return (res * sign);
 }
 
