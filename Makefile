@@ -3,8 +3,8 @@
 ################################################################################
 
 NAME        := push_swap
-CC        	:= gcc
-FLAGS    	:= -Wall -Wextra -Werror -fsanitize=address -g
+CC        	:= cc
+CFLAGS    	:= -Wall -Wextra -Werror -fsanitize=address -g 
 LIBFTA		= ./libft/libft.a
 
 ################################################################################
@@ -28,7 +28,7 @@ SRCS        :=            utils/move/rotate.c \
 OBJS        := $(SRCS:.c=.o)
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ################################################################################
 #                                  Makefile  objs                              #
@@ -45,17 +45,16 @@ RM		    := rm -f
 
 # ${NAME}:	${OBJS}
 # 			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
-# 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
+# 			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 # 			@echo "$(GREEN)$(NAME) created[0m ✔️"
 
 all:		${NAME}
 
-$(NAME):	$(LIBFTA) $(OBJS)
-			$(CC) $(FLAGS) $(LIBFTA) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS)
+			$(CC) $(CFLAGS) $(LIBFTA) $(OBJS) -L./libft/ -lft -o $(NAME)
 			@echo "$(GREEN)Successfully built --> $(YELLOW)$(NAME)$(DEFAULT)"
 
-$(LIBFTA):
-			make -C libft
+
 clean:
 			@ ${RM} *.o */*.o */*/*.o
 			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"

@@ -6,13 +6,13 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 09:57:37 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/10 09:58:36 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:50:27 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	put_top_a(t_stack **lst, int index, t_count *counter)
+void	put_top_a(t_stack **lst, int index)
 {
 	int	size;
 	int	i;
@@ -25,7 +25,7 @@ void	put_top_a(t_stack **lst, int index, t_count *counter)
 		i = index;
 		while (i)
 		{
-			ra(lst, counter);
+			ra(lst);
 			i--;
 		}
 	}
@@ -34,13 +34,13 @@ void	put_top_a(t_stack **lst, int index, t_count *counter)
 		i = index;
 		while (i < size)
 		{
-			rra(lst, counter);
+			rra(lst);
 			i++;
 		}
 	}
 }
 
-void	put_top_b(t_stack **lst, int index, t_count *counter)
+void	put_top_b(t_stack **lst, int index)
 {
 	int	size;
 	int	i;
@@ -53,7 +53,7 @@ void	put_top_b(t_stack **lst, int index, t_count *counter)
 		i = index;
 		while (i)
 		{
-			rb(lst, counter);
+			rb(lst);
 			i--;
 		}
 	}
@@ -62,7 +62,7 @@ void	put_top_b(t_stack **lst, int index, t_count *counter)
 		i = index;
 		while (i < size)
 		{
-			rrb(lst, counter);
+			rrb(lst);
 			i++;
 		}
 	}

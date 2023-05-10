@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:39 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/10 11:28:27 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:54:45 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-typedef struct s_count
-{
-	int		moves;
-}	t_count;
 
 /*** UTILS ***/
 
@@ -61,28 +57,28 @@ int		lst_nbr_index(t_stack **a, int nbr); // DELETE
 int		find_bff(t_stack **a, int nb);
 int		find_pos(t_stack **stack, int nbr);
 int		cost_control(t_stack **a, t_stack **b, int nbr, int bff);
-void	put_top_a(t_stack **lst, int index, t_count *counter);
-void	put_top_b(t_stack **lst, int index, t_count *counter);
+void	put_top_a(t_stack **lst, int index);
+void	put_top_b(t_stack **lst, int index);
 
 /* Moves */
 void	swap(t_stack **s);
-void	sa(t_stack **a, t_count *counter);
-void	sb(t_stack **b, t_count *counter);
-void	ss(t_stack **a, t_stack **b, t_count *counter);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
 void	push(t_stack **src, t_stack **dst);
-void	pa(t_stack **a, t_stack **b, t_count *counter);
-void	pb(t_stack **a, t_stack **b, t_count *counter);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
 void	rotate(t_stack **s);
-void	ra(t_stack **a, t_count *counter);
-void	rb(t_stack **b, t_count *counter);
-void	rr(t_stack **a, t_stack **b, t_count *counter);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
 void	rev_rotate(t_stack **s);
-void	rra(t_stack **a, t_count *counter);
-void	rrb(t_stack **b, t_count *counter);
-void	rrr(t_stack **a, t_stack **b, t_count *counter);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
 
 /* Sort */
-void	sort(t_stack **a, t_count *counter);
-void	sort_3(t_stack **a, t_count *counter);
+void	sort(t_stack **a);
+void	sort_3(t_stack **a);
 
 #endif

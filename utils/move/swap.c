@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:45 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/02 23:03:24 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:51:23 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,27 @@ void	swap(t_stack **s)
 
 // Swap the first 2 elements at the top of stack a.
 // Do nothing if there is only one or no elements.
-// Update the moves counter.
-void	sa(t_stack **a, t_count *counter)
+void	sa(t_stack **a)
 {
 	swap(a);
 	write(1, "sa\n", 3);
-	counter->moves++;
+	
 }
 
 // Swap the first 2 elements at the top of stack b. 
 // Do nothing if there is only one or no elements.
-void	sb(t_stack **b, t_count *counter)
+void	sb(t_stack **b)
 {
 	swap(b);
 	write(1, "sb\n", 3);
-	counter->moves++;
+	
 }
 
 // sa and sb at the same time
-void	ss(t_stack **a, t_stack **b, t_count *counter)
+void	ss(t_stack **a, t_stack **b)
 {
 	swap(a);
 	swap(b);
 	write(1, "ss\n", 3);
-	counter->moves++;
+	
 }

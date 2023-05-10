@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:50 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/04 14:40:54 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:50:48 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,27 @@ void	rev_rotate(t_stack **stack)
 
 // Shift down all elements of stack a by 1.
 // The last element becomes the first one.
-void	rra(t_stack **a, t_count *counter)
+void	rra(t_stack **a)
 {
 	rev_rotate(a);
 	write(1, "rra\n", 4);
-	counter->moves++;
+	
 }
 
 // Shift down all elements of stack b by 1.
 // The last element becomes the first one.
-void	rrb(t_stack **b, t_count *counter)
+void	rrb(t_stack **b)
 {
 	rev_rotate(b);
 	write(1, "rrb\n", 4);
-	counter->moves++;
+	
 }
 
 // rra and rrb at the same time.
-void	rrr(t_stack **a, t_stack **b, t_count *counter)
+void	rrr(t_stack **a, t_stack **b)
 {
 	rev_rotate(a);
 	rev_rotate(b);
 	write(1, "rrr\n", 4);
-	counter->moves++;
+	
 }

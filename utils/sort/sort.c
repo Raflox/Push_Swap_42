@@ -6,13 +6,13 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 13:05:49 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/08 15:34:58 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:50:27 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	sort_3(t_stack **a, t_count *counter)
+void	sort_3(t_stack **a)
 {
 	int		first;
 	int		second;
@@ -22,28 +22,28 @@ void	sort_3(t_stack **a, t_count *counter)
 	second = (*a)->next->nbr;
 	third = (*a)->next->next->nbr;
 	if ((first > second) && (second < third) && (first < third))
-		sa(a, counter);
+		sa(a);
 	else if ((first > second) && (second > third) && (first > third))
 	{
-		sa(a, counter);
-		rra(a, counter);
+		sa(a);
+		rra(a);
 	}
 	else if ((first > second) && (second < third) && (first > third))
-		ra(a, counter);
+		ra(a);
 	else if ((first < second) && (second > third) && (first < third))
 	{
-		sa(a, counter);
-		ra(a, counter);
+		sa(a);
+		ra(a);
 	}	
 	else if ((first < second) && (second > third) && (first > third))
-		rra(a, counter);
+		rra(a);
 }
 
-void	sort(t_stack **a, t_count *counter)
+void	sort(t_stack **a)
 {
 	if (lst_size(*a) == 2 && !is_sorted(a))
-		sa(a, counter);
+		sa(a);
 	else if (lst_size(*a) == 3)
-		sort_3(a, counter);
+		sort_3(a);
 }
 

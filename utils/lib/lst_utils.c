@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:48:11 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/09 15:51:46 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:42:53 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	lst_size(t_stack *lst)
 
 	temp = lst;
 	len = 0;
+	if (!lst)
+		return (0);
 	while (temp != NULL)
 	{
 		temp = temp->next;

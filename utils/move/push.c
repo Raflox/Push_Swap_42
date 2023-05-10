@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:52 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/08 12:54:51 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:50:48 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ void	push(t_stack **src, t_stack **dst)
 
 // Take the first element at the top of b and put it at the top of a.
 // Do nothing if b is empty.
-void	pa(t_stack **b, t_stack **a, t_count *counter)
+void	pa(t_stack **b, t_stack **a)
 {
 	push(b, a);
 	write(1, "pa\n", 3);
-	counter->moves++;
+	
 }
 
 // Take the first element at the top of a and put it at the top of b.
 // Do nothing if a is empty.
-void	pb(t_stack **a, t_stack **b, t_count *counter)
+void	pb(t_stack **a, t_stack **b)
 {
 	push(a, b);
 	write(1, "pb\n", 3);
-	counter->moves++;
+	
 }
