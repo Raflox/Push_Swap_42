@@ -15,6 +15,7 @@ SRCS        :=            utils/move/rotate.c \
                           utils/move/push.c \
                           utils/move/rev_rotate.c \
                           utils/move/swap.c \
+                          utils/move/top.c \
                           utils/get/getters.c \
                           utils/lib/ft_utils.c \
                           utils/lib/free.c \

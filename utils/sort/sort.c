@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 13:05:49 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/08 12:16:55 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:34:58 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	sort_3(t_stack **a, t_count *counter)
 	int		second;
 	int		third;
 
-	if (lst_size(*a) == 2)
-		sa(a, counter);
 	first = (*a)->nbr;
 	second = (*a)->next->nbr;
 	third = (*a)->next->next->nbr;
@@ -40,3 +38,12 @@ void	sort_3(t_stack **a, t_count *counter)
 	else if ((first < second) && (second > third) && (first > third))
 		rra(a, counter);
 }
+
+void	sort(t_stack **a, t_count *counter)
+{
+	if (lst_size(*a) == 2 && !is_sorted(a))
+		sa(a, counter);
+	else if (lst_size(*a) == 3)
+		sort_3(a, counter);
+}
+

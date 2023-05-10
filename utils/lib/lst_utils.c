@@ -6,13 +6,13 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:48:11 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/08 12:33:17 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:51:46 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	lst_add(t_stack **lst, t_stack *new)
+void	 lst_add(t_stack **lst, t_stack *new)
 {
 	t_stack	*last;
 
@@ -66,3 +66,22 @@ int	lst_size(t_stack *lst)
 	return (len);
 }
 
+// Function to calculate avg on stack
+int	lst_avg(t_stack **a)
+{
+	t_stack			*temp;
+	long long int	avg;
+	int				i;
+
+	i = 0;
+	avg = 0;
+	temp = *a;
+	while (temp)
+	{
+		avg += (temp)->nbr;
+		temp = (temp)->next;
+		i++;
+	}
+	avg = avg / i;
+	return (avg);
+}

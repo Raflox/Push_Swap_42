@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:39 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/08 12:29:11 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:28:27 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 typedef struct s_stack
 {
 	int				nbr;
+	int				bff;
+	int				cost;
+	int				index;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -52,8 +55,14 @@ t_stack	*lst_new(int content);
 t_stack	*lst_last(t_stack *lst);
 void	free_stack(t_stack **stack);
 int		lst_size(t_stack *lst);
-int		lst_min(t_stack *lst);
-int		lst_max(t_stack *lst);
+int		lst_min(t_stack **stack); // DELETE
+int		lst_max(t_stack *lst); // DELETE
+int		lst_nbr_index(t_stack **a, int nbr); // DELETE
+int		find_bff(t_stack **a, int nb);
+int		find_pos(t_stack **stack, int nbr);
+int		cost_control(t_stack **a, t_stack **b, int nbr, int bff);
+void	put_top_a(t_stack **lst, int index, t_count *counter);
+void	put_top_b(t_stack **lst, int index, t_count *counter);
 
 /* Moves */
 void	swap(t_stack **s);
@@ -73,6 +82,7 @@ void	rrb(t_stack **b, t_count *counter);
 void	rrr(t_stack **a, t_stack **b, t_count *counter);
 
 /* Sort */
+void	sort(t_stack **a, t_count *counter);
 void	sort_3(t_stack **a, t_count *counter);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:05:41 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/08 12:27:06 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:27:51 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,81 @@ int	mod_atoi(const char *str)
 	return (res * sign);
 }
 
-// function to calculate avg on stack
-int	lst_avg(t_stack **a)
+// Function to find position on stack
+int	find_pos(t_stack **stack, int nbr)
 {
-	int	avg;
-	int i;
+	t_stack	*temp;
+	int		i;
 
 	i = 0;
-	avg = 0;
-	while (*a)
+	temp = *stack;
+	while (temp)
 	{
-		avg += (*a)->nbr;
-		*a = (*a)->next;
+		if (temp->nbr == nbr)
+		{
+			temp->index = i;
+			return (i);
+		}
+		temp = temp->next;
 		i++;
 	}
-	avg = avg / i;
-	return (avg);
+	return (0);
+}
+
+// Function to find each nbr bff
+int	find_bff(t_stack **a, int nb)
+{
+	long int	bff;
+	long int	counter;
+	long int	tmp;
+	t_stack		*temp;
+
+	counter = __LONG_LONG_MAX__;
+	temp = *a;
+	while (temp)
+	{
+		tmp = (temp)->nbr - nb;
+		if ((tmp < counter) && ((temp)->nbr > nb))
+		{
+			counter = tmp;
+			bff = (temp)->nbr;
+		}
+		(temp) = (temp)->next;
+	}
+	return (bff);
+}
+
+// Function to calculate cost of moves
+int	cost_control(t_stack **a, t_stack **b, int nbr, int bff)
+{
+	int	cost;
+
+	cost = 0;
+	if ((find_pos(b, nbr) <= lst_size(*b) / 2))
+		cost += find_pos(b, nbr);
+	else if (find_pos(b, nbr) > lst_size(*b) / 2)
+		cost += lst_size(*b) - find_pos(b, nbr);
+	if ((find_pos(a, bff)) <= lst_size(*a) / 2)
+		cost += find_pos(a, bff);
+	else if (find_pos(a, bff) >= lst_size(*a) / 2)
+		cost += lst_size(*a) - find_pos(a, bff);
+	(*b)->cost = cost;
+	return (cost);
+}
+
+// Function to find the minimum number on stack
+int	lst_min(t_stack **stack)
+{
+	t_stack	*temp;
+	int		min;
+
+	temp = *stack;
+	min = temp->nbr;
+	while (temp)
+	{
+		if (temp->nbr < min)
+			min = temp->nbr;
+		temp = temp->next;
+	}
+	return (min);
 }
