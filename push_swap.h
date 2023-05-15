@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:39 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/10 16:54:45 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:40:24 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_stack
 	int				index;
 	struct s_stack	*next;
 }	t_stack;
-
 
 /*** UTILS ***/
 

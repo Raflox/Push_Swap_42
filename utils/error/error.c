@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:08:23 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/04/19 15:02:01 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:42:55 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	error(void)
 {
-	write(0, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(0);
 }

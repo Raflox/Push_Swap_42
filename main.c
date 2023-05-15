@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:43 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/10 17:07:55 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:25:17 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 			temp2 = b;
 			while (lst_size(b) > 0)
 			{
-				cost = __LONG_LONG_MAX__;
+				cost = LONG_MAX;
 				temp2 = b;
 				while (temp2)
 				{
