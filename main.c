@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:43 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/15 18:15:35 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:23:19 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,6 @@
 
 // FIXME: ATOI Overflow
 // FIXME: check_args ./push_swap "3" "-3" " "
-
-/* void print_list(t_stack *a)
-{
-	t_stack *temp;
-
-	temp = a;
-	while (temp != NULL)
-	{
-		printf("%d\n", temp->nbr);
-		temp = temp->next;
-	}
-} */
 
 int	main(int argc, char **argv)
 {
@@ -70,7 +58,6 @@ int	main(int argc, char **argv)
 						cost = cost_control(&a, &b, temp2->nbr, temp2->bff);
 						idx1 = find_pos(&a, temp2->bff);
 						idx2 = find_pos(&b, temp2->nbr);
-						// printf("NBR: %d & BFF: %d == COST: %d\n", temp2->nbr, temp2->bff, cost_control(&a, &b, temp2->nbr, temp2->bff));
 					}
 					temp2 = temp2->next;
 				}
@@ -84,20 +71,6 @@ int	main(int argc, char **argv)
 	else
 		error();
 	free_stack(&a);
-	// temp1 = a;
-	// temp2 = b;
-	// while (temp1 != NULL)
-	// {
-	// 	printf("STACK A NBR: %d\n", temp1->nbr);
-	// 	temp1 = temp1->next;
-	// }
-	// while (temp2 != NULL)
-	// {
-	// 	printf("STACK B NBR: %d\n", temp2->nbr);
-	// 	printf("STACK B BFF: %d\n", temp2->bff);
-	// 	temp2 = temp2->next;
-	// }
-	// printf("Moves: %d\n"->moves);
 }
 
 
