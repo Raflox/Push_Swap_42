@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:43 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/15 15:25:17 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:15:35 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 
 // FIXME: ATOI Overflow
 // FIXME: check_args ./push_swap "3" "-3" " "
+
+/* void print_list(t_stack *a)
+{
+	t_stack *temp;
+
+	temp = a;
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->nbr);
+		temp = temp->next;
+	}
+} */
 
 int	main(int argc, char **argv)
 {
@@ -26,7 +38,7 @@ int	main(int argc, char **argv)
 
 	// if ac > 2 -> check
 	// if ac == 1 -> exit
-
+	b = NULL;
 	if (argc > 2)
 	{
 		a = get_stack(argc, argv);

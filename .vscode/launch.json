@@ -11,8 +11,8 @@
 			"name": "Pusk", //I named it Pusk because i can 
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/miniRT", //path to your programs exe and exe name
-			"args": ["srcs/cy.rt"],
+			"program": "${workspaceFolder}/push_swap", //path to your programs exe and exe name
+			"args": ["-795637821", "-817849381", "-787139369", "1841735957", "1869403274", "-1754497865", "2127160855", "-1055875492", "-1806341833", "1719156363"],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],

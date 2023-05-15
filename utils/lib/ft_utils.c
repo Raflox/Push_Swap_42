@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:05:41 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/15 15:18:57 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:11:58 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	find_bff(t_stack **a, int nb)
 	temp = *a;
 	while (temp)
 	{
-		tmp = (temp)->nbr - nb;
+		tmp = (long int)(temp)->nbr - nb;
 		if ((tmp < counter) && ((temp)->nbr > nb))
 		{
 			counter = tmp;
