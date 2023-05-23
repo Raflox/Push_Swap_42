@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:05:41 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/15 18:11:58 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:30:15 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	mod_atoi(const char *str)
 		i++;
 	if (str[i] == '-' && ++i)
 		sign = -sign;
+	if (!ft_isdigit(str[i]))
+		error();
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))

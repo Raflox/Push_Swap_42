@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 13:05:49 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/10 16:50:27 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/15 23:08:27 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,3 @@ void	sort(t_stack **a)
 	else if (lst_size(*a) == 3)
 		sort_3(a);
 }
-

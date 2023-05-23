@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:51:50 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/10 16:50:48 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:23:56 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	rra(t_stack **a)
 {
 	rev_rotate(a);
 	write(1, "rra\n", 4);
-	
 }
 
 // Shift down all elements of stack b by 1.
@@ -43,7 +42,6 @@ void	rrb(t_stack **b)
 {
 	rev_rotate(b);
 	write(1, "rrb\n", 4);
-	
 }
 
 // rra and rrb at the same time.
@@ -52,5 +50,4 @@ void	rrr(t_stack **a, t_stack **b)
 	rev_rotate(a);
 	rev_rotate(b);
 	write(1, "rrr\n", 4);
-	
 }

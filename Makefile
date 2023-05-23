@@ -4,7 +4,7 @@
 
 NAME        := push_swap
 CC        	:= cc
-CFLAGS    	:= -Wall -Wextra -Werror -fsanitize=address -g 
+CFLAGS    	:= -Wall -Wextra -Werror -g 
 LIBFTA		= ./libft/libft.a
 
 ################################################################################
@@ -16,6 +16,7 @@ SRCS        :=            utils/move/rotate.c \
                           utils/move/rev_rotate.c \
                           utils/move/swap.c \
                           utils/move/top.c \
+                          utils/move/sort_moves.c \
                           utils/get/getters.c \
                           utils/lib/ft_utils.c \
                           utils/lib/free.c \

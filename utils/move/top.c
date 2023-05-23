@@ -6,7 +6,7 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 09:57:37 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/10 16:50:27 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/16 22:40:44 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	put_top_a(t_stack **lst, int index)
 	int	i;
 
 	size = lst_size(*lst);
-/* 	if (index == -1)
-		return (-1); */
+	if (index == -1)
+		return ;
 	if ((size / 2) >= index)
 	{
 		i = index;
@@ -46,8 +46,8 @@ void	put_top_b(t_stack **lst, int index)
 	int	i;
 
 	size = lst_size(*lst);
-/* 	if (index == -1)
-		return (-1); */
+	if (index == -1)
+		return ;
 	if ((size / 2) >= index)
 	{
 		i = index;

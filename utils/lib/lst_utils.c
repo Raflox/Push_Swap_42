@@ -6,13 +6,13 @@
 /*   By: rafilipe <rafilipe@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:48:11 by rafilipe          #+#    #+#             */
-/*   Updated: 2023/05/15 18:15:41 by rafilipe         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:24:50 by rafilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	 lst_add(t_stack **lst, t_stack *new)
+void	lst_add(t_stack **lst, t_stack *new)
 {
 	t_stack	*last;
 
